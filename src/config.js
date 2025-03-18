@@ -5,9 +5,9 @@ config();
 export const PORT = process.env.PORT || 3000;
 export const DB_HOST = process.env.DB_HOST || 'localhost';
 export const DB_PORT = process.env.DB_PORT || 3306;
-export const DB_USER = process.env.DB_USER || 'Backend';
+export const DB_USER = process.env.DB_USER || 'RivasSuarez';
 export const DB_PASSWORD = process.env.DB_PASSWORD || '123456';
-export const DB_DATABASE = process.env.DB_DATABASE || 'distribuidora_bd';
+export const DB_DATABASE = process.env.DB_DATABASE || 'distribuidora_RS';
 
 //export const PORT = process.env.PORT;
 //export const DB_HOST = process.env.DB_HOST;
