@@ -4,8 +4,6 @@ import rutasUsuarios from './routes/usuarios.routes.js';
 import rutasProductos from './routes/productos.routes.js';
 import rutasProveedor from './routes/proveedor.routes.js';
 
-
-const cors = require('cors');
 const app = express();
 
 app.use(express.json());
