@@ -4,7 +4,7 @@ import {  obtenerClientes, obtenerCliente } from '../controllers/clientes.contro
 const router = Router();
 
 // Ruta para obtener todos los clientes
-router.get('/clientes', obtenerClientes);
+router.get('/cliente', obtenerClientes);
 
 // Ruta para obtener un cliente por su ID
 router.get('/cliente/:id', obtenerCliente);
