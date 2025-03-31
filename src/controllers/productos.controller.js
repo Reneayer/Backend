@@ -3,7 +3,7 @@ import { pool } from '../db.js';
 // Obtener todos los productos
 export const obtenerProductos = async (req, res) => {
   try {
-    const [result] = await pool.query('SELECT * FROM Producto');
+    const [result] = await pool.query('SELECT * FROM Productos');
     res.json(result);
   } catch (error) {
     return res.status(500).json({
@@ -16,7 +16,7 @@ export const obtenerProductos = async (req, res) => {
 // Obtener un producto por su ID
 export const obtenerProducto = async (req, res) => {
   try {
-    const [result] = await pool.query('SELECT * FROM Producto WHERE ID_Producto = ?', [req.params.id]);
+    const [result] = await pool.query('SELECT * FROM Productos WHERE id_producto = ?', [req.params.id]);
     
     if (result.length <= 0) {
       return res.status(404).json({
