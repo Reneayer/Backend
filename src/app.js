@@ -10,13 +10,14 @@ import rutasEmpleados from './routes/empleados.routes.js';
 import rutasDetallesCompras from './routes/Detalles_Compras.routes.js';
 import rutasCompras from './routes/compras.routes.js';
 import rutasEstadisticas from './routes/estadisticas.routes.js';
+import rutasIA from './routes/ia.routes.js';
 
 const app = express();
 
 // Habilitar CORS para cualquier origen
 app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
-    allowedHeaders: ['Content-Type'],
+    allowedHeaders: ['Content-Type']
 }));
 
 
@@ -27,6 +28,7 @@ app.use(express.urlencoded({ limit: '10mb', extended: true }));
 
 app.use(express.json());
 
+app.use('/chatIA', rutasIA);
 app.use('/api', rutasClientes);
 app.use('/api', rutasUsuarios);
 app.use('/api', rutasProductos);
@@ -43,5 +45,13 @@ app.use((req, res, next) => {
     message: 'La ruta que ha especificado no se encuentra registrada.'
     });
 });
+
+
+app._router.stack.forEach((middleware) => {
+    if (middleware.route) {
+        console.log(`Ruta registrada: ${middleware.route.path} [${Object.keys(middleware.route.methods).join(", ")}]`);
+    }
+});
+
 
 export default app;

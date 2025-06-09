@@ -20,9 +20,9 @@ router.get('/cantidaddeventasporempleado', cantidadDeVentasPorEmpleado);
 router.get('/totalventasporempleadoymes', totalDeVentasPorEmpleadoyMes);
 // Ruta para obtener todas las ventas por mes
 router.get('/analisisdeventasporcliente', analisisDeVentasPorCliente);
-//
+// Ruta para obtener la cantidad de compras por cliente
 router.get('/comprasporcliente', cantidadComprasPorCliente);
-//
+// Ruta para obtener total de las compras al mes por cliente
 router.get('/totalcomprasclientemes', totalComprasClienteMes);
 //
 router.get('/totalcomprasporcliente', totalComprasPorCliente);
